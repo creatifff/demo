@@ -13,8 +13,18 @@
                 <a href="#">Где нас найти</a>
             </nav>
             <div class="btns">
-                <a class="login-btn" href="{{ route('page.login') }}">Вход</a>
-                <a class="reg-btn" href="{{ route('page.register') }}">Регистрация</a>
+                @guest
+                    <a class="login-btn" href="{{ route('page.login') }}">Вход</a>
+                    <a class="reg-btn" href="{{ route('page.register') }}">Регистрация</a>
+                @endguest
+                @auth
+                    @if(auth()->user()->isAdmin())
+                        <a class="login-btn" href="{{ route('admin.index') }}">Админ панель</a>
+                    @else
+                        <a class="login-btn" href="#">Кабинет</a>
+                    @endif
+                        <a class="reg-btn" href="{{ route('auth.logoutUser') }}">Выйти</a>
+                @endauth
             </div>
         </div>
     </div>

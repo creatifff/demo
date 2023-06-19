@@ -63,11 +63,12 @@ body {
 }
 
 .short__section {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 30px 0;
 }
 
 
@@ -76,8 +77,6 @@ body {
 
 header {
     padding: 30px 0;
-    position: absolute;
-    width: 100%;
 }
 
 .header__inner {
@@ -288,6 +287,7 @@ footer {
     background-color: #FA8F2D;
     padding: 30px;
     border-radius: 15px;
+    min-width: 400px;
     width: fit-content;
     margin: 0 auto;
 }
@@ -299,8 +299,23 @@ footer {
 }
 
 .invalid-error {
-    color: red;
-    font-size: 12px;
+    color: #850000;
+    font-size: 13px;
+    font-family: Manrope-Medium, sans-serif;
+}
+
+.info-notif {
+
+}
+
+.info-message {
+    position: absolute;
+    top: 80px;
+    margin: 0 0 0 auto;
+    background-color: #00f8ff;
+    padding: 10px 20px;
+    color: #000;
+    border-radius: 10px;
     font-family: Manrope-Medium, sans-serif;
 }
 
@@ -312,6 +327,21 @@ footer {
     font-size: 14px;
     font-family: Manrope-Regular, sans-serif;
     width: 100%;
+}
+
+.form__btn {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #FA8F2D;
+    font-family: Manrope-SemiBold, sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
 .form__span {

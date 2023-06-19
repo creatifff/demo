@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Requests\Product;
+
+use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return auth()->check() && auth()->user()->isAdmin();
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, ValidationRule|array|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => 'required|min:3',
+            'year' => 'numeric|min:2001',
+            'price' => 'numeric|min:1',
+            'country' => 'min:3',
+            'image_path' => 'mimes:jpg,png,webp,jpeg,svg|max:5000',
+            'category_id' => 'required|exists:categories,id',
+        ];
+    }
+}
